@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple Boxing Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Boxing Simulation</h1>
+      <div class="match-info">
+        <div>Round: <span id="roundNumber">1</span> / <span id="totalRounds">8</span></div>
+        <div>Exchange: <span id="exchangeCount">0</span> / <span id="exchangesPerRound">10</span></div>
+      </div>
+    </header>
+
+    <main class="arena">
+      <div class="panel left-panel">
+        <h2 id="nameRed">Red</h2>
+        <div class="health">
+          <div class="hp-bar-bg"><div id="hpRed" class="hp-bar-fill"></div></div>
+          <div class="hp-text"><span id="hpRedText">100</span>%</div>
+        </div>
+        <div class="stats" id="statsRed"></div>
+      </div>
+
+      <div class="ring">
+        <div class="boxer boxer-red" id="boxerRed">
+          <div class="head"></div>
+          <div class="torso"></div>
+          <div class="glove left"></div>
+          <div class="glove right"></div>
+        </div>
+
+        <div class="referee" id="referee">Referee</div>
+
+        <div class="boxer boxer-green" id="boxerGreen">
+          <div class="head"></div>
+          <div class="torso"></div>
+          <div class="glove left"></div>
+          <div class="glove right"></div>
+        </div>
+      </div>
+
+      <div class="panel right-panel">
+        <h2 id="nameGreen">Green</h2>
+        <div class="health">
+          <div class="hp-bar-bg"><div id="hpGreen" class="hp-bar-fill green"></div></div>
+          <div class="hp-text"><span id="hpGreenText">100</span>%</div>
+        </div>
+        <div class="stats" id="statsGreen"></div>
+      </div>
+    </main>
+
+    <section class="controls">
+      <div class="buttons">
+        <button id="startBtn">Start Match</button>
+        <button id="pauseBtn" disabled>Pause</button>
+        <button id="nextRoundBtn" disabled>Next Round</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+
+      <div class="options">
+        <label><input type="checkbox" id="autoFight" checked> Auto fight</label>
+        <label>Rounds: <input id="roundsInput" type="number" min="1" max="12" value="8"></label>
+        <label>Exchanges/Round: <input id="exchangesInput" type="number" min="1" max="30" value="10"></label>
+      </div>
+
+      <div class="log" id="log">Press "Start Match" to begin.</div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
